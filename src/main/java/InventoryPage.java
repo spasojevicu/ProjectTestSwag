@@ -20,6 +20,7 @@ public class InventoryPage extends BasePage{
 
     @FindBy(className = "product_sort_container")
     WebElement sort;
+
     public InventoryPage(ChromeDriver driver)
     {
         this.driver = driver;
