@@ -14,6 +14,9 @@ public class LoginPage extends BasePage{
     @FindBy(id = "login-button")
     WebElement loginButton;
 
+    @FindBy(className = "error-message-container")
+    WebElement errorMessage;
+
 
     public LoginPage(ChromeDriver driver)
     {
@@ -25,8 +28,14 @@ public class LoginPage extends BasePage{
     {
         userName.sendKeys(name);
         pass.sendKeys(password);
-        loginButton.submit();
+        loginButton.click();
     }
+
+    public String getError()
+    {
+       return errorMessage.getText();
+    }
+
 
 
 }
