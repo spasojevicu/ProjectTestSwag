@@ -20,6 +20,15 @@ public class CheckOutStepOnePage extends  BasePage{
     @FindBy(className = "summary_total_label")
     WebElement priceTotal;
 
+    @FindBy(className = "summary_subtotal_label")
+    WebElement itemTotal;
+
+    @FindBy(css = ".cart_footer #finish")
+    WebElement finish;
+
+    @FindBy(className = "complete-header")
+    WebElement thanksMessage;
+
     public CheckOutStepOnePage(ChromeDriver driver)
     {
         this.driver = driver;
@@ -38,4 +47,20 @@ public class CheckOutStepOnePage extends  BasePage{
     {
         return priceTotal.getText();
     }
+
+    public String getPriceItem()
+    {
+        return itemTotal.getText();
+    }
+
+    public void clickFinish()
+    {
+        finish.click();
+    }
+
+    public String getMessage()
+    {
+        return thanksMessage.getText();
+    }
+
 }
