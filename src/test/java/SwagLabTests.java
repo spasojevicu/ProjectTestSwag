@@ -61,6 +61,17 @@ public class SwagLabTests extends BaseTest{
         Assert.assertEquals(cartPage.getNumberOfItem(),"3");
     }
 
+    @Test
+    public void removeProducts()
+    {
+        loginPage.LoginOnPage("standard_user","secret_sauce");
+        inventoryPage.addTwo();
+        inventoryPage.clickOnCart();
+        cartPage.erase();
+
+        Assert.assertEquals(cartPage.getNumberOfItem(),"");
+
+    }
 
     @Test
     public void checkTotalPrice()
@@ -93,8 +104,6 @@ public class SwagLabTests extends BaseTest{
     {
         driver.quit();
     }
-
-
 
 
 }
