@@ -11,6 +11,22 @@ public class CartPage extends BasePage{
     @FindBy(css = ".cart_footer #checkout")
     WebElement checkout;
 
+    @FindBy(id = "remove-test.allthethings()-t-shirt-(red)")
+    WebElement removeR;
+
+    @FindBy(id = "remove-sauce-labs-fleece-jacket")
+    WebElement removeJ;
+
+    @FindBy(id = "continue-shopping")
+    WebElement back;
+
+    public void erase()
+    {
+        removeJ.click();
+        removeR.click();
+        back.click();
+    }
+
 
     public CartPage(ChromeDriver driver)
     {
